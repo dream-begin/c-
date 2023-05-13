@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+	int year;
+	printf("请输入一个年份，来判断它是不是闰年==>");
+	scanf_s(" %d", &year);
+	if (year % 4 == 0 && year % 100 != 0)
+		printf("这是闰年");
+	else if (year %400==0)
+		printf("这是闰年");
+	else
+		printf("这不是闰年");
+	return 0;
+}
