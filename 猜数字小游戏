@@ -1,0 +1,68 @@
+#define _CRT_SECURE_NO_WARNING
+#include<stdio.h>
+#include<stdlib.h> 
+#include<time.h>
+void menu()
+{
+	printf("*********************\n");
+	printf("**      1.start   **\n");
+	printf("**      0.quit    **\n");
+	printf("please input 1 or 0 to srart game or quit game==>\n");
+
+}
+void game()
+{
+	int ret;
+	int feedback;
+	
+	printf("猜数字\n");
+	ret=rand()%100+1;//控制数在0到100之间
+	printf("请输入一个你想到的数=>\n");
+	do
+	{
+		scanf("%d", &feedback);
+		if (feedback > ret)
+		{
+			printf("猜大了哦\n");
+		}
+		else if (feedback < ret)
+			printf("猜小了哦\n");
+
+		else if (feedback == ret)
+		{
+			printf("猜对了，真厉害！\n");
+			break;
+		}
+	
+
+			
+	} while (1);
+
+
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int a;
+	do
+	{
+		menu();
+		
+		scanf("%d", &a);
+		switch (a)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			break;
+		default:
+			printf("英语这么差还TM打游戏，滚去背单词\n");
+			break;
+
+		}
+	} while (a);
+	return 0;
+
+
+}
