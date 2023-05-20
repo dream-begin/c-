@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+void exchange(int* a, int* b)
+{
+	int x = *a;
+	*a = *b;
+	*b = x;
+}
+int main()
+{
+	int v = 100;
+	int n = 200;
+	printf("%d,%d\n", v, n);
+	exchange(&v,&n);
+	printf("%d,%d", v, n);
+	return 0;
+}
